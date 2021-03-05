@@ -26,7 +26,9 @@ const Input = ({ input, setInput, lists, setList }) => {
         required
         onChange={handleChange}
       />
-      <button type="submit">add</button>
+      <button className="btn-add" type="submit">
+        +
+      </button>
     </form>
   );
 };

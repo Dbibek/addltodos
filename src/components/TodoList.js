@@ -15,13 +15,20 @@ const TodoList = ({ lists, setList }) => {
     );
   };
   return (
-    <div>
+    <div className="todos">
       {lists.map((list) => (
         <li key={list.id}>
-          <div>
+          <div className="todo">
             <h3> {list.value}</h3>
-            <button onClick={() => handleDelete(list)}>Del</button>
-            <button onClick={() => handleComplete(list)}>complete</button>
+            <button className="btn-del" onClick={() => handleDelete(list)}>
+              Del
+            </button>
+            <button
+              className={list.completed ? "btn-complete" : "btn-notcomplete"}
+              onClick={() => handleComplete(list)}
+            >
+              complete
+            </button>
           </div>
         </li>
       ))}

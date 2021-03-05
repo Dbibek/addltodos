@@ -8,7 +8,8 @@ function App() {
 
   console.log(lists);
   return (
-    <div className="App">
+    <div className="app">
+      <h2 className="heading">Todo List</h2>
       <div>
         <Input
           input={input}

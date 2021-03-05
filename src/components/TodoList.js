@@ -19,16 +19,15 @@ const TodoList = ({ lists, setList }) => {
       {lists.map((list) => (
         <li key={list.id}>
           <div className="todo">
-            <h3> {list.value}</h3>
-            <button className="btn-del" onClick={() => handleDelete(list)}>
-              Del
-            </button>
-            <button
-              className={list.completed ? "btn-complete" : "btn-notcomplete"}
-              onClick={() => handleComplete(list)}
-            >
-              complete
-            </button>
+            <h3 className={list.completed ? "complete" : "notcomplete"}>
+              {list.value}
+            </h3>
+            <div className="buttondiv">
+              <button className="btn-del" onClick={() => handleDelete(list)}>
+                X
+              </button>
+              <button onClick={() => handleComplete(list)}>✓</button>
+            </div>
           </div>
         </li>
       ))}

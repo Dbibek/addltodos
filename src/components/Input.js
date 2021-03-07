@@ -21,7 +21,7 @@ const Input = ({ input, setInput, lists, setList }) => {
     <form onSubmit={handleClick}>
       <input
         type="text"
-        placeholder="add your list here"
+        placeholder="add your todos here"
         value={input}
         required
         onChange={handleChange}

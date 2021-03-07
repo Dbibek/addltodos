@@ -1,4 +1,5 @@
 import React from "react";
+import Todo from "./Todo";
 
 const TodoList = ({ lists, setList }) => {
   const handleDelete = ({ id }) => {
@@ -16,21 +17,15 @@ const TodoList = ({ lists, setList }) => {
   };
   return (
     <div className="todos">
-      {lists.map((list) => (
-        <li key={list.id}>
-          <div className="todo">
-            <h3 className={list.completed ? "complete" : "notcomplete"}>
-              {list.value}
-            </h3>
-            <div className="buttondiv">
-              <button className="btn-del" onClick={() => handleDelete(list)}>
-                X
-              </button>
-              <button onClick={() => handleComplete(list)}>✓</button>
-            </div>
-          </div>
-        </li>
-      ))}
+      {lists.length === 0 ? (
+        <h2>No thing to do!!!</h2>
+      ) : (
+        <Todo
+          lists={lists}
+          handleDelete={handleDelete}
+          handleComplete={handleComplete}
+        />
+      )}
     </div>
   );
 };

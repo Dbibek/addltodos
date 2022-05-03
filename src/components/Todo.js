@@ -25,7 +25,12 @@ const Todo = ({ lists, handleComplete, handleDelete }) => {
           </div>
         </li>
       ))}
-      <h2> you have {lists.length} things to do</h2>
+      <h2>
+        {" "}
+        {lists.length < 2
+          ? `you have ${lists.length} thing to do`
+          : `you have ${lists.length} things to do`}
+      </h2>
     </>
   );
 };
